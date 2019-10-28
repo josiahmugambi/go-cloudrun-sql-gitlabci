@@ -1,11 +1,15 @@
 # go-cloudrun-sql-gitlabci
 How to deploy a Golang app to GCP Cloud Run with postgresql running in cloudsql and basic CI via a basic Gitlab CI
-Ver 0.01 - 28 Oct 2019
+
+- Still writing Ver 0.01 - 28 Oct 2019
 
 ## Background
 As part of learning, testing and using different cloud platforms and offerings, I have experimented with a few of Google's and AWS's offerings. (I sort of lean towards GCP as I find it alot easier to find what I need product and documentation wise). 
 
 Cloud Run launched not too long ago and is still in beta, but I already see its great potential. It sits somewhat between app engine flex and Kubernetes on the compute paradigm - and can deploy to a Kubernetes cluster. For the bulk of the platforms we are building (at alba.one), we will be using managed cloud run.
+
+## General useful links:
+- https://medium.com/google-cloud/cloud-run-cloud-sql-6c8879ef96da
 
 ## Basic Steps
 1. Initial Configuration
