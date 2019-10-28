@@ -10,8 +10,9 @@ Cloud Run launched not too long ago and is still in beta, but I already see its 
 ## Basic Steps
 1. Initial Configuration
 2. Cloud SQL Setup
-3. Cloud Run Local Deployment
-4. Gitlab CI setup
+3. Sample Go App Setup
+4. Cloud Run Local Deployment
+5. Gitlab CI setup
 
 
 ## 1. Initial Configuration (assumes Linux or OS-X terminal)
@@ -41,7 +42,12 @@ gcloud config configurations list
 Useful Resources:
 - [Cloud SQL quick starts](https://cloud.google.com/sql/docs/postgres/quickstarts)
 
-## Cloud Run Local Deployment:
+## 3. Sample Go App Setup 
+Useful Resources:
+- [Using Cloud SQL with Go](https://cloud.google.com/go/getting-started/using-cloud-sql)
+
+## 4. Cloud Run Deployment
 Useful Resources:
 - [Cloud Run quickstarts](https://cloud.google.com/run/docs/quickstarts?hl=en_GB&_ga=2.100862087.-704505203.1547643049)
 
+## 5. Basic Gitlab CI
