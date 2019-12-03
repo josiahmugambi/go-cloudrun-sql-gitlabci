@@ -1,4 +1,4 @@
-# go-cloudrun-sql-gitlabci
+# golang + cloudrun + cloudsql 
 How to deploy a Golang app to GCP Cloud Run with postgresql running in cloudsql and basic CI via a basic Gitlab CI
 
 - Still writing ver 0.02 - 27 Nov 2019
@@ -17,7 +17,7 @@ Cloud Run [launched](https://cloud.google.com/blog/products/serverless/announcin
 2. Cloud SQL Setup
 3. Sample Go App Setup
 4. Cloud Run Local Deployment
-5. Gitlab CI setup
+
 
 
 ## 1. Initial Configuration 
@@ -59,4 +59,4 @@ Useful Resources:
 - [Cloud Run quickstarts](https://cloud.google.com/run/docs/quickstarts?hl=en_GB&_ga=2.100862087.-704505203.1547643049)
 
 
-## 5. Basic Gitlab CI
+
