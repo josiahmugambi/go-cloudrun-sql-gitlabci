@@ -40,14 +40,26 @@ gcloud auth login
 gcloud config set project a1-lab-run
 gcloud config set compute/region us-central1
 gcloud config set compute/zone us-central1-a
+```
+The first step automatically activates this configuration i.e. a1-lab-run. If you have more than one configuration you can list these by running:
+
+```
 gcloud config configurations list
 ```
+
+and then activating the one you need by:
+
+```
+gcloud config configurations activate <configuration name>
+```
+
+I find this pretty useful - especially when you are managing multiple environments, projects, users as well as in scripts.
 
 ## 2. Cloud SQL Setup
 Useful Resources:
 - [Cloud SQL quick starts](https://cloud.google.com/sql/docs/postgres/quickstarts)
-
-Navigate to your project and create a new cloudsql instance for postgresql . I'm using the following parameters but you can choose whatever you prefer. Look at the quickstart for the detailed process. 
+- [Cloud SQL Proxy for Local Testing](https://cloud.google.com/sql/docs/postgres/quickstart-proxy-test)
+Navigate to your project and create a new Cloud Sql instance for postgresql. (This will also enable the Cloud SQL API if not already enabled). I'm using the following parameters but you can choose whatever you prefer. Look at the quickstart for the detailed process. 
 
   * instance id: runsql
   * database version: PostgreSQL 11
@@ -65,6 +77,27 @@ Create the database as the newly created user by navigating to databases and cli
 
 * database name: runsql-db
 
+There are several ways to connect to your new database. One way is to use [use the cloudsql proxy locally for testing](https://cloud.google.com/sql/docs/postgres/quickstart-proxy-test). After downloading it to your local environment, invoke it by running the following from the install location (or add it to your $PATH and leave out the ./ )
+
+
+```
+./cloud_sql_proxy -instances=<INSTANCE CONNECTION NAME>=tcp:5432 
+```
+
+in my case, this is:
+
+```
+./cloud_sql_proxy -instances=<INSTANCE CONNECTION NAME> a1-lab-run:us-central1:runsql=tcp:5432 
+```
+
+You should have output similar to this:
+
+```
+[josiah:~/scripts]$ cloud_sql_proxy -instances=a1-lab-run:us-central1:runsql=tcp:5432
+2019/12/07 11:34:55 Rlimits for file descriptors set to {&{8500 9223372036854775807}}
+2019/12/07 11:34:58 Listening on 127.0.0.1:5432 for a1-lab-run:us-central1:runsql
+2019/12/07 11:34:58 Ready for new connections
+```
 
 
 ## 3. Sample Go App Setup 
