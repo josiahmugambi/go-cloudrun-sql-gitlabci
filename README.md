@@ -59,6 +59,7 @@ I find this pretty useful - especially when you are managing multiple environmen
 Useful Resources:
 - [Cloud SQL quick starts](https://cloud.google.com/sql/docs/postgres/quickstarts)
 - [Cloud SQL Proxy for Local Testing](https://cloud.google.com/sql/docs/postgres/quickstart-proxy-test)
+
 Navigate to your project and create a new Cloud Sql instance for postgresql. (This will also enable the Cloud SQL API if not already enabled). I'm using the following parameters but you can choose whatever you prefer. Look at the quickstart for the detailed process. 
 
   * instance id: runsql
@@ -87,7 +88,7 @@ There are several ways to connect to your new database. One way is to use [use t
 in my case, this is:
 
 ```
-./cloud_sql_proxy -instances=<INSTANCE CONNECTION NAME> a1-lab-run:us-central1:runsql=tcp:5432 
+./cloud_sql_proxy -instances=a1-lab-run:us-central1:runsql=tcp:5432 
 ```
 
 You should have output similar to this:
