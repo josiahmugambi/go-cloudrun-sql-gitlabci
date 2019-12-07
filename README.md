@@ -47,6 +47,24 @@ gcloud config configurations list
 Useful Resources:
 - [Cloud SQL quick starts](https://cloud.google.com/sql/docs/postgres/quickstarts)
 
+Navigate to your project and create a new cloudsql instance for postgresql . I'm using the following parameters but you can choose whatever you prefer. Look at the quickstart for the detailed process. 
+
+  instance id: runsql
+  database version: PostgreSQL 11
+  default (postgres) user password: p0stgres
+  Machine Type: f1 micro (under Configuration Options) - this is not recommended for production environments 
+  compute region/zone: us-central1/us-central1-a (as configured for default above)
+
+Click create. It should take a few minutes to create the instance. While waiting, take note of the instance connection name from the instance list. In my case this is: `a1-lab-run:us-central1:runsql`. You can also get the instance connection name by clicking on the instance id. 
+
+Click on the instance id and then the users tab to create the database user. You will be prompted to enter the database user/password. I'm using:
+
+user/password: runsql/p4ssword!
+
+Create the database as the newly created user by navigating to databases and clicking create database: I used:
+
+database name: runsql-db
+
 
 
 ## 3. Sample Go App Setup 
