@@ -100,6 +100,7 @@ You should have output similar to this:
 2019/12/07 11:34:58 Ready for new connections
 ```
 
+Keep this terminal window open.
 
 ## 3. Sample Go App Setup 
 Useful Resources:
